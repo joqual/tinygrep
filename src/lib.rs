@@ -21,8 +21,5 @@ impl Config {
 
 pub fn run(cfg: Config) -> Result<(), Box<dyn Error>> {
     let contents= fs::read_to_string(cfg.filepath)?;
-
-    println!("Found contents:\n{contents}");
-
     Ok(())
 }
