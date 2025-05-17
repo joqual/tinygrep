@@ -9,13 +9,13 @@ fn main() {
     let cfg: Config = match Config::build(&args) {
         Ok(cfg) => cfg,
         Err(e) => {
-            println!("Application error: {e}");
+            eprintln!("Problem parsing arguments: {e}");
             process::exit(1);
         }
     };
 
     if let Err(e) = tinygrep::run(cfg) {
-        println!("Application error: {e}");
+        eprintln!("Application error: {e}");
         process::exit(1);
     };
 }
