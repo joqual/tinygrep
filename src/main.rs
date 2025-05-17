@@ -6,9 +6,10 @@ use tinygrep::Config;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let cfg = match Config::build(&args) {
+    let cfg: Config = match Config::build(&args) {
         Ok(cfg) => cfg,
         Err(e) => {
+            println!("Application error: {e}");
             process::exit(1);
         }
     };
